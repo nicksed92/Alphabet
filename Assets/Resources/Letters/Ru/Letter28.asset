@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97fd7a1a0a6d5d4ab1b649bfdf60ed4, type: 3}
+  m_Name: Letter28
+  m_EditorClassIdentifier: 
+  _name: "\u042A\u044A"
+  _soundFull: {fileID: 8300000, guid: 55a3d9cba7fa7d44da14c554e37895c6, type: 3}
+  _soundShort: {fileID: 0}
+  _soundWord: {fileID: 8300000, guid: dccdefa36f8bfa046b0e3246d68a839c, type: 3}
+  _icon: {fileID: 0}
