@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class MenuButtons : MonoBehaviour
@@ -13,10 +14,18 @@ public class MenuButtons : MonoBehaviour
 
     [SerializeField] private Animator _menuAnimator;
 
+    public static UnityEvent OnLearn = new UnityEvent();
+
     private void Awake()
     {
         _playButton.onClick.AddListener(BaseClick);
-        _learnButton.onClick.AddListener(BaseClick);
+        _learnButton.onClick.AddListener(OnLearnClick);
+    }
+
+    private void OnLearnClick()
+    {
+        BaseClick();
+        OnLearn.Invoke();
     }
 
     private void BaseClick()
