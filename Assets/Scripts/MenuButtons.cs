@@ -15,10 +15,11 @@ public class MenuButtons : MonoBehaviour
     [SerializeField] private Animator _menuAnimator;
 
     public static UnityEvent OnLearn = new UnityEvent();
+    public static UnityEvent OnPlay = new UnityEvent();
 
     private void Awake()
     {
-        _playButton.onClick.AddListener(BaseClick);
+        _playButton.onClick.AddListener(OnPlayClick);
         _learnButton.onClick.AddListener(OnLearnClick);
     }
 
@@ -26,6 +27,12 @@ public class MenuButtons : MonoBehaviour
     {
         BaseClick();
         OnLearn.Invoke();
+    }
+
+    private void OnPlayClick()
+    {
+        BaseClick();
+        OnPlay.Invoke();
     }
 
     private void BaseClick()

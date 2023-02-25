@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Letter19
   m_EditorClassIdentifier: 
   _name: "\u0421\u0441"
+  _word: "\u0421\u043B\u043E\u043D"
   _soundFull: {fileID: 8300000, guid: 674280bbf188b0440991cf12c1b344b6, type: 3}
-  _soundShort: {fileID: 8300000, guid: 6d582a42682a2cb4ca26ae2fac0dd632, type: 3}
   _soundWord: {fileID: 8300000, guid: 786436644091376408187982b62e3221, type: 3}
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 1da9f9dc667f65c488dde0ab642240a4, type: 3}

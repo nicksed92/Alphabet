@@ -12,6 +12,13 @@ public class LetterTemplateViewController : MonoBehaviour
 
     public static UnityEvent OnStartLearn = new UnityEvent();
 
+    public int ChoisenLetterID { get; private set; }
+
+    public Color GetRandomColor()
+    {
+        return _lettersColor[Random.Range(0, _lettersColor.Count)];
+    }
+
     private void Awake()
     {
         MenuButtons.OnLearn.AddListener(OnLearnChoise);
@@ -35,7 +42,7 @@ public class LetterTemplateViewController : MonoBehaviour
 
     private void OnLetterClick(int buttonID)
     {
-        Debug.Log(buttonID);
+        ChoisenLetterID = buttonID;
         _animator.SetTrigger("Hide");
         OnStartLearn.Invoke();
     }
@@ -45,8 +52,5 @@ public class LetterTemplateViewController : MonoBehaviour
         _animator.enabled = true;
     }
 
-    private Color GetRandomColor()
-    {
-        return _lettersColor[Random.Range(0, _lettersColor.Count)];
-    }
+ 
 }
