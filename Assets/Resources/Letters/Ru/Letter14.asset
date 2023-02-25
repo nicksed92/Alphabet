@@ -16,4 +16,4 @@ MonoBehaviour:
   _soundFull: {fileID: 8300000, guid: 52401514ecb82d041b6f753e71fa761b, type: 3}
   _soundShort: {fileID: 8300000, guid: 93a3ba1e8af9a16488ee5bea406a2e55, type: 3}
   _soundWord: {fileID: 8300000, guid: e1b4a867b40fab5428fbabbc5fb56967, type: 3}
-  _icon: {fileID: 0}
+  _icon: {fileID: 21300000, guid: c1ca1ab4914f5ed47adb1618ba94136b, type: 3}
