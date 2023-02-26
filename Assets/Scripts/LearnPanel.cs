@@ -19,10 +19,12 @@ public class LearnPanel : MonoBehaviour
     private int _currentLetterId;
 
     private bool _isStartLearn = false;
+    private bool _isPanelOpen = false;
 
     private void Awake()
     {
         LetterTemplateViewController.OnStartLearn.AddListener(OnStartLearn);
+        BackButton.OnClicked.AddListener(HidePanel);
         _leftArrow.onClick.AddListener(OnLeftArrowClick);
         _rightArrow.onClick.AddListener(OnRightArrowClick);
         _imageButton.onClick.AddListener(OnImageClick);
@@ -62,10 +64,29 @@ public class LearnPanel : MonoBehaviour
     private void OnStartLearn()
     {
         _isStartLearn = true;
-        _animator.enabled = true;
         _currentLetterId = _letterTemplateViewController.ChoisenLetterID;
         ShowLetterInfo();
         StartCoroutine(SayAll());
+
+        if (_isPanelOpen)
+            return;
+
+        if (_animator.enabled == false)
+            _animator.enabled = true;
+        else
+            _animator.SetTrigger("Show");
+
+        _isPanelOpen = true;
+    }
+
+    private void HidePanel()
+    {
+        if (_isPanelOpen == false)
+            return;
+
+        _animator.SetTrigger("Hide");
+
+        _isPanelOpen = false;
     }
 
     private void ShowLetterInfo()

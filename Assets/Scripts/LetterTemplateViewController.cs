@@ -14,6 +14,8 @@ public class LetterTemplateViewController : MonoBehaviour
 
     public int ChoisenLetterID { get; private set; }
 
+    private bool _isPanelOpen = false;
+
     public Color GetRandomColor()
     {
         return _lettersColor[Random.Range(0, _lettersColor.Count)];
@@ -22,6 +24,7 @@ public class LetterTemplateViewController : MonoBehaviour
     private void Awake()
     {
         MenuButtons.OnLearn.AddListener(OnLearnChoise);
+        BackButton.OnClicked.AddListener(HidePanel);
     }
 
     private void Start()
@@ -43,14 +46,29 @@ public class LetterTemplateViewController : MonoBehaviour
     private void OnLetterClick(int buttonID)
     {
         ChoisenLetterID = buttonID;
-        _animator.SetTrigger("Hide");
+        HidePanel();
         OnStartLearn.Invoke();
     }
 
     private void OnLearnChoise()
     {
-        _animator.enabled = true;
+        if (_isPanelOpen)
+            return;
+
+        if (_animator.enabled == false)
+            _animator.enabled = true;
+        else
+            _animator.SetTrigger("Show");
+
+        _isPanelOpen = true;
     }
 
- 
+    private void HidePanel()
+    {
+        if (_isPanelOpen == false)
+            return;
+
+        _animator.SetTrigger("Hide");
+        _isPanelOpen = false;
+    }
 }

@@ -19,6 +19,7 @@ public class MenuButtons : MonoBehaviour
 
     private void Awake()
     {
+        BackButton.OnClicked.AddListener(ShowMenu);
         _playButton.onClick.AddListener(OnPlayClick);
         _learnButton.onClick.AddListener(OnLearnClick);
     }
@@ -27,6 +28,14 @@ public class MenuButtons : MonoBehaviour
     {
         BaseClick();
         OnLearn.Invoke();
+    }
+
+    private void ShowMenu()
+    {
+        if (_menuAnimator.enabled == false)
+            _menuAnimator.enabled = true;
+        else
+            _menuAnimator.SetTrigger("Show");
     }
 
     private void OnPlayClick()
