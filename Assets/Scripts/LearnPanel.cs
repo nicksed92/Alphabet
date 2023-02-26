@@ -53,7 +53,7 @@ public class LearnPanel : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
-                if (_currentLetterId > _lettersController.LettersRU.Count - 2)
+                if (_currentLetterId > _lettersController.CurrentLetters.Count - 2)
                     return;
 
                 OnRightArrowClick();
@@ -91,9 +91,9 @@ public class LearnPanel : MonoBehaviour
 
     private void ShowLetterInfo()
     {
-        _letter.text = _lettersController.LettersRU[_currentLetterId].Name;
-        _word.text = _lettersController.LettersRU[_currentLetterId].Word;
-        _image.sprite = _lettersController.LettersRU[_currentLetterId].Icon;
+        _letter.text = _lettersController.CurrentLetters[_currentLetterId].Name;
+        _word.text = _lettersController.CurrentLetters[_currentLetterId].Word;
+        _image.sprite = _lettersController.CurrentLetters[_currentLetterId].Icon;
 
         SetRandomColor();
         TryHideArrows();
@@ -130,7 +130,7 @@ public class LearnPanel : MonoBehaviour
         else
             _leftArrow.gameObject.SetActive(true);
 
-        if (_currentLetterId > _lettersController.LettersRU.Count - 2)
+        if (_currentLetterId > _lettersController.CurrentLetters.Count - 2)
             _rightArrow.gameObject.SetActive(false);
         else
             _rightArrow.gameObject.SetActive(true);
@@ -153,13 +153,13 @@ public class LearnPanel : MonoBehaviour
 
     private void PlayLetter()
     {
-        _audioSource.clip = _lettersController.LettersRU[_currentLetterId].SoundFull;
+        _audioSource.clip = _lettersController.CurrentLetters[_currentLetterId].SoundFull;
         _audioSource.Play();
     }
 
     private void PlayWord()
     {
-        _audioSource.clip = _lettersController.LettersRU[_currentLetterId].SoundWord;
+        _audioSource.clip = _lettersController.CurrentLetters[_currentLetterId].SoundWord;
         _audioSource.Play();
     }
 

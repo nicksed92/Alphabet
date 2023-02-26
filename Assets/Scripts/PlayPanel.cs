@@ -90,15 +90,15 @@ public class PlayPanel : MonoBehaviour
         int value = _random.Next(0, 2);
         randomLetters.Clear();
 
-        _correctLetterIndex = _random.Next(0, _lettersController.LettersRU.Count);
-        _image.sprite = _lettersController.LettersRU[_correctLetterIndex].Icon;
-        randomLetters.Add(_lettersController.LettersRU[_correctLetterIndex]);
-        _letter.text = _lettersController.LettersRU[_correctLetterIndex].Name;
+        _correctLetterIndex = _random.Next(0, _lettersController.CurrentLetters.Count);
+        _image.sprite = _lettersController.CurrentLetters[_correctLetterIndex].Icon;
+        randomLetters.Add(_lettersController.CurrentLetters[_correctLetterIndex]);
+        _letter.text = _lettersController.CurrentLetters[_correctLetterIndex].Name;
         _letter.color = _letterTemplateViewController.GetRandomColor();
 
         for (int i = 0; i < 4; i++)
         {
-            var randomElement = _lettersController.LettersRU.Where(x => !randomLetters.Contains(x)).OrderBy(x => _random.Next()).FirstOrDefault();
+            var randomElement = _lettersController.CurrentLetters.Where(x => !randomLetters.Contains(x)).OrderBy(x => _random.Next()).FirstOrDefault();
             randomLetters.Add(randomElement);
         }
 
@@ -206,15 +206,15 @@ public class PlayPanel : MonoBehaviour
 
         if (_correctButtonIndex == value)
         {
-            int index = _random.Next(0, _lettersController.CorrectRu.Count);
-            _audioSource.clip = _lettersController.CorrectRu[index];
+            int index = _random.Next(0, _lettersController.CurrentCorrectPhrases.Count);
+            _audioSource.clip = _lettersController.CurrentCorrectPhrases[index];
             _audioSource.Play();
             Invoke(nameof(ChoiseRandomGame), 1f);
         }
         else
         {
-            int index = _random.Next(0, _lettersController.IncorrectRu.Count);
-            _audioSource.clip = _lettersController.IncorrectRu[index];
+            int index = _random.Next(0, _lettersController.CurrentInCorrectPhrases.Count);
+            _audioSource.clip = _lettersController.CurrentInCorrectPhrases[index];
             _audioSource.Play();
         }
 

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97fd7a1a0a6d5d4ab1b649bfdf60ed4, type: 3}
+  m_Name: Letter1 19
+  m_EditorClassIdentifier: 
+  _name: Ss
+  _word: Sun
+  _soundFull: {fileID: 8300000, guid: b9f3b19cb52aba5489b80e02c4fbee52, type: 3}
+  _soundWord: {fileID: 8300000, guid: e6c6584730f84a145909523891265039, type: 3}
+  _icon: {fileID: 21300000, guid: f946923f805644e4e8552b59f58496cf, type: 3}

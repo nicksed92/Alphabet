@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97fd7a1a0a6d5d4ab1b649bfdf60ed4, type: 3}
+  m_Name: Letter1 21
+  m_EditorClassIdentifier: 
+  _name: Uu
+  _word: Umbrella
+  _soundFull: {fileID: 8300000, guid: 62a2d8411171fb047b2fb023685f49c1, type: 3}
+  _soundWord: {fileID: 8300000, guid: 2fd491bcb61a4984280148df3c919479, type: 3}
+  _icon: {fileID: 21300000, guid: 92bb3e5b093ec0d49af25fc0cc3ccfc6, type: 3}

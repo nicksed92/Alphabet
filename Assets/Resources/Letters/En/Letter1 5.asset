@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97fd7a1a0a6d5d4ab1b649bfdf60ed4, type: 3}
+  m_Name: Letter1 5
+  m_EditorClassIdentifier: 
+  _name: Ee
+  _word: Egg
+  _soundFull: {fileID: 8300000, guid: 41048ac492e27d34dae217a06bab0061, type: 3}
+  _soundWord: {fileID: 8300000, guid: 65e7d18052bb13c4bae9cc27b3dd68f9, type: 3}
+  _icon: {fileID: 21300000, guid: 1dda123ef3316a248839c6d51d9fcab9, type: 3}

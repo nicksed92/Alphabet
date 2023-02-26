@@ -25,6 +25,7 @@ public class LetterTemplateViewController : MonoBehaviour
     {
         MenuButtons.OnLearn.AddListener(OnLearnChoise);
         BackButton.OnClicked.AddListener(HidePanel);
+        LocalizationManager.OnLanguageChanged.AddListener(CreateAlphabet);
     }
 
     private void Start()
@@ -34,10 +35,15 @@ public class LetterTemplateViewController : MonoBehaviour
 
     private void CreateAlphabet()
     {
-        for (int i = 0; i < _lettersController.LettersRU.Count; i++)
+        foreach (Transform t in _container)
+        {
+            Destroy(t.gameObject);
+        }
+
+        for (int i = 0; i < _lettersController.CurrentLetters.Count; i++)
         {
             var clone = Instantiate(_letterTemplateView, _container);
-            clone.Initialize(_lettersController.LettersRU[i].Name, _lettersController.LettersRU[i].Icon, i, GetRandomColor());
+            clone.Initialize(_lettersController.CurrentLetters[i].Name, _lettersController.CurrentLetters[i].Icon, i, GetRandomColor());
             var button = clone.GetButton();
             button.onClick.AddListener(delegate { OnLetterClick(clone.ID); });
         }

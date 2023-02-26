@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97fd7a1a0a6d5d4ab1b649bfdf60ed4, type: 3}
+  m_Name: Letter1 13
+  m_EditorClassIdentifier: 
+  _name: Mm
+  _word: Mouse
+  _soundFull: {fileID: 8300000, guid: 7bced33b4d3726d4bb9be9f9bc912002, type: 3}
+  _soundWord: {fileID: 8300000, guid: e253ded1a4b899744a42084a04c5af98, type: 3}
+  _icon: {fileID: 21300000, guid: d399b8b05558c6b4790199f68ee18507, type: 3}

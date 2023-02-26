@@ -11,6 +11,7 @@ public class MenuButtons : MonoBehaviour
     [SerializeField] private Button _languageRuButton;
     [SerializeField] private Button _languageEnButton;
     [SerializeField] private Button _ratingButton;
+    [SerializeField] private Text _title;
 
     [SerializeField] private Animator _menuAnimator;
 
@@ -20,8 +21,17 @@ public class MenuButtons : MonoBehaviour
     private void Awake()
     {
         BackButton.OnClicked.AddListener(ShowMenu);
+        LocalizationManager.OnLanguageChanged.AddListener(SetText);
         _playButton.onClick.AddListener(OnPlayClick);
         _learnButton.onClick.AddListener(OnLearnClick);
+        _languageRuButton.onClick.AddListener(SetLangEn);
+        _languageEnButton.onClick.AddListener(SetLangRu);
+    }
+
+    private void Start()
+    {
+        SetText();
+        SetLangButtonVisible();
     }
 
     private void OnLearnClick()
@@ -30,12 +40,33 @@ public class MenuButtons : MonoBehaviour
         OnLearn.Invoke();
     }
 
+    private void SetLangEn()
+    {
+        LocalizationManager.Instance.SetEnLanguage();
+    }
+
+    private void SetLangRu()
+    {
+        LocalizationManager.Instance.SetRuLanguage();
+    }
+
     private void ShowMenu()
     {
         if (_menuAnimator.enabled == false)
             _menuAnimator.enabled = true;
         else
             _menuAnimator.SetTrigger("Show");
+    }
+
+    private void SetLangButtonVisible()
+    {
+        _languageRuButton.gameObject.SetActive(false);
+        _languageEnButton.gameObject.SetActive(false);
+
+        if (LocalizationManager.Instance.CurrentLanguage == Languages.DefaultLanguages.ru.ToString())
+            _languageRuButton.gameObject.SetActive(true);
+        else
+            _languageEnButton.gameObject.SetActive(true);
     }
 
     private void OnPlayClick()
@@ -47,5 +78,15 @@ public class MenuButtons : MonoBehaviour
     private void BaseClick()
     {
         _menuAnimator.SetTrigger("Hide");
+    }
+
+    private void SetText()
+    {
+        _playButton.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = LocalizationManager.Instance.GetText("play");
+        _learnButton.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = LocalizationManager.Instance.GetText("learn");
+        _languageRuButton.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = LocalizationManager.Instance.GetText("language");
+        _languageEnButton.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = LocalizationManager.Instance.GetText("language");
+        _ratingButton.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = LocalizationManager.Instance.GetText("rate");
+        _title.GetComponent<Text>().text = LocalizationManager.Instance.GetText("app_name");
     }
 }
