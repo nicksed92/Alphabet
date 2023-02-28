@@ -54,6 +54,7 @@ public class LetterTemplateViewController : MonoBehaviour
         ChoisenLetterID = buttonID;
         HidePanel();
         OnStartLearn.Invoke();
+        SoundManager.Instance.PlaySound("Click");
     }
 
     private void OnLearnChoise()
@@ -67,6 +68,8 @@ public class LetterTemplateViewController : MonoBehaviour
             _animator.SetTrigger("Show");
 
         _isPanelOpen = true;
+
+        SoundManager.Instance.PlaySound("Open");
     }
 
     private void HidePanel()

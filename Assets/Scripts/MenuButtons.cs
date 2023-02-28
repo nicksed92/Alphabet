@@ -24,6 +24,7 @@ public class MenuButtons : MonoBehaviour
         LocalizationManager.OnLanguageChanged.AddListener(SetText);
         _playButton.onClick.AddListener(OnPlayClick);
         _learnButton.onClick.AddListener(OnLearnClick);
+        _ratingButton.onClick.AddListener(OnRateClick);
         _languageRuButton.onClick.AddListener(SetLangEn);
         _languageEnButton.onClick.AddListener(SetLangRu);
     }
@@ -43,11 +44,13 @@ public class MenuButtons : MonoBehaviour
     private void SetLangEn()
     {
         LocalizationManager.Instance.SetEnLanguage();
+        SoundManager.Instance.PlaySound("Click");
     }
 
     private void SetLangRu()
     {
         LocalizationManager.Instance.SetRuLanguage();
+        SoundManager.Instance.PlaySound("Click");
     }
 
     private void ShowMenu()
@@ -75,9 +78,16 @@ public class MenuButtons : MonoBehaviour
         OnPlay.Invoke();
     }
 
+    private void OnRateClick()
+    {
+        SoundManager.Instance.PlaySound("Click");
+        YandexSDK.Instance.ShowFeedback();
+    }
+
     private void BaseClick()
     {
         _menuAnimator.SetTrigger("Hide");
+        SoundManager.Instance.PlaySound("Click");
     }
 
     private void SetText()

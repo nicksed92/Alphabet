@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -71,11 +70,8 @@ public class LocalizationManager : MonoBehaviour
 
     private void Start()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
         YandexSDK.Instance.GetLanguage();
-#else
-        OnLanguageRecived(_defaultLanguage.ToString());
-#endif
+        //OnLanguageRecived(_defaultLanguage.ToString());
     }
 
     private void OnLanguageRecived(string language)
@@ -84,8 +80,6 @@ public class LocalizationManager : MonoBehaviour
             CurrentLanguage = _defaultLanguage.ToString();
         else
             CurrentLanguage = language;
-
-        Debug.Log("Current language: " + CurrentLanguage);
 
         LoadLocalization();
     }

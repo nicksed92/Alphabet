@@ -6014,6 +6014,67 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2040158613
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2040158615}
+  - component: {fileID: 2040158614}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2040158614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040158613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc381b5dae2f2e4b9b45c6407ed8315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musics:
+  - Name: Main
+    AudioClip: {fileID: 8300000, guid: 0ada6cbb499cd4148aad2dd4a9b98c8a, type: 3}
+    Volume: 0.15
+    Pitch: 0.7
+    AudioSource: {fileID: 0}
+  _sounds:
+  - Name: Click
+    AudioClip: {fileID: 8300000, guid: 4fc6a39561f74874b9278ca17b9ef551, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    AudioSource: {fileID: 0}
+  - Name: Open
+    AudioClip: {fileID: 8300000, guid: 8b0066035e6ba2f41adb2608556a2e47, type: 3}
+    Volume: 1
+    Pitch: 1
+    AudioSource: {fileID: 0}
+--- !u!4 &2040158615
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040158613}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1110, y: -335, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2077163513
 GameObject:
   m_ObjectHideFlags: 0

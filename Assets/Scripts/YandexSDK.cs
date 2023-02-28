@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
@@ -35,6 +33,7 @@ public class YandexSDK : MonoBehaviour
 
     public void GetLanguageExternCallBack(string language)
     {
+        Debug.Log("Recived language is: " + language);
         OnLanguageRecived.Invoke(language);
     }
 

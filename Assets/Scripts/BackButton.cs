@@ -26,6 +26,8 @@ public class BackButton : MonoBehaviour
     {
         _animator.SetTrigger("Hide");
         OnClicked.Invoke();
+        SoundManager.Instance.PlaySound("Click");
+        SoundManager.Instance.PlaySound("Open");
     }
 
     private void ShowButton()

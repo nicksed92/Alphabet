@@ -41,12 +41,14 @@ public class PlayPanel : MonoBehaviour
 
         _image.GetComponent<Button>().onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySound("Click");
             StopAllCoroutines();
             SayWord();
         });
 
         _letter.GetComponent<Button>().onClick.AddListener(() =>
         {
+            SoundManager.Instance.PlaySound("Click");
             StopAllCoroutines();
             SayLetter();
         });
@@ -72,6 +74,9 @@ public class PlayPanel : MonoBehaviour
             _animator.SetTrigger("Show");
 
         _isPanelOpen = true;
+
+        SoundManager.Instance.PlaySound("Open");
+
     }
 
     private void OnBackButtonClicked()
@@ -218,5 +223,6 @@ public class PlayPanel : MonoBehaviour
             _audioSource.Play();
         }
 
+        SoundManager.Instance.PlaySound("Click");
     }
 }

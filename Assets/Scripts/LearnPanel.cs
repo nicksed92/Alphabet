@@ -77,6 +77,9 @@ public class LearnPanel : MonoBehaviour
             _animator.SetTrigger("Show");
 
         _isPanelOpen = true;
+
+        SoundManager.Instance.PlaySound("Open");
+
     }
 
     private void HidePanel()
@@ -116,6 +119,7 @@ public class LearnPanel : MonoBehaviour
         StopAllCoroutines();
         ShowLetterInfo();
         StartCoroutine(SayAll());
+        SoundManager.Instance.PlaySound("Click");
     }
 
     private void SetRandomColor()
@@ -168,5 +172,6 @@ public class LearnPanel : MonoBehaviour
         StopAllCoroutines();
         PlayLetter();
         StartCoroutine(SayWord());
+        SoundManager.Instance.PlaySound("Click");
     }
 }
